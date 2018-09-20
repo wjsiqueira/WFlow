@@ -7,7 +7,7 @@ from db import monitora_limiar, delete_data
 
 from setconf import *
 
-INTERVALO = 5
+INTERVALO = 1
 
 
 def config():
