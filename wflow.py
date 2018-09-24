@@ -14,19 +14,15 @@
 # limitations under the License.
 
 from pprint import pprint
-
 from operator import attrgetter
-
 from ryu.app import simple_switch_stp_13
 from ryu.app import rest_router
 from ryu.controller import ofp_event
 from ryu.controller.handler import MAIN_DISPATCHER, DEAD_DISPATCHER
 from ryu.controller.handler import set_ev_cls
 from ryu.lib import hub
-
 from extract import *
 from conf import INTERVALO
-
 
 #class SimpleMonitor13(simple_switch_stp_13.SimpleSwitch13):
 class SimpleMonitor13(rest_router.RestRouterAPI):
