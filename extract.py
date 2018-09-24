@@ -32,13 +32,11 @@ def extract(datapath, stat, INTERVALO):
         rx_taxa = (stat.rx_bytes - STATS[datapath][stat.port_no]['rx_bytes_ant']) / INTERVALO
         STATS[datapath][stat.port_no]['rx_taxa'] = rx_taxa
         STATS[datapath][stat.port_no]['rx_bytes_ant'] = stat.rx_bytes
-
         STATS[datapath][stat.port_no]['rx_media'] = ((ALPHA) * rx_taxa + (1-ALPHA) * STATS[datapath][stat.port_no]['rx_media'])
 
         tx_taxa = (stat.tx_bytes - STATS[datapath][stat.port_no]['tx_bytes_ant']) / INTERVALO
         STATS[datapath][stat.port_no]['tx_taxa'] = tx_taxa
         STATS[datapath][stat.port_no]['tx_bytes_ant'] = stat.tx_bytes
-
         STATS[datapath][stat.port_no]['tx_media'] = ((ALPHA) * tx_taxa + (1-ALPHA) * STATS[datapath][stat.port_no]['tx_media'])
 
         #pprint(STATS)
